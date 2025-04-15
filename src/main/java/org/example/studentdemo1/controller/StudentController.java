@@ -11,8 +11,10 @@ import java.util.List;
 @RequestMapping("/api/students")
 
 public class StudentController {
-    private final StudentService studentService;
 
+
+    private final StudentService studentService;
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public ResponseEntity<List<StudentDTO>> getAllStudents() {
         return ResponseEntity.ok(studentService.getAllStudents());
